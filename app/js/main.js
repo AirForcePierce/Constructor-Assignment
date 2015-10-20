@@ -4,11 +4,29 @@
 
 'use strict';
 
-var Dog = function Dog(color, hungry) {
-  this.color = color;
-  this.isHungry = hungry;
+var Dog = function Dog(info) {
+  info = info || {};
+
+  this.color = info.color;
+  this.hungry = info.hungry === undefined ? true : info.hungry;
+  this.status = 'normal';
+  this.owner = info.owner;
 };
 ///
+
+var Human = function Human(params) {
+  params = params || {};
+
+  this.pet = function (dog) {
+    return dog.status = 'happy';
+  };
+
+  this.cool = params.cool || false;
+
+  this.feed = function (dog) {
+    return dog.hungry = false;
+  };
+};
 ///
 ///
 
