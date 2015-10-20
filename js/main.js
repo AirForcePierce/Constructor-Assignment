@@ -1,7 +1,10 @@
 // Constructors
 // Only add code to *THIS* section!
 
-///
+let Dog = function (color, hungry) {
+  this.color = color;
+  this.isHungry = hungry;
+};
 ///
 ///
 ///
